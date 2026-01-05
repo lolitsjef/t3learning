@@ -2,7 +2,7 @@
 
 ## TODO
 
-- [] Deply 
+- [X] Deply 
 - [] Scaffold basic UI
 - [] Setup Database
 - [] Attach Database to UI
