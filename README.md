@@ -3,8 +3,8 @@
 ## TODO
 
 - [X] Deply 
-- [] Scaffold basic UI
-- [] Setup Database
+- [X] Scaffold basic UI
+- [X] Setup Database
 - [] Attach Database to UI
 - [] Authentication
 - [] Image Upload

@@ -6,7 +6,7 @@ export default {
   schema: "./src/server/db/schema.ts",
   dialect: "postgresql",
   dbCredentials: {
-    url: env.DATABASE_URL,
+    url: env.POSTGRES_URL_NON_POOLING,
   },
   tablesFilter: ["t3learning_*"],
 } satisfies Config;
