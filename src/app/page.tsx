@@ -2,37 +2,18 @@ import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
-const mockUrls = [
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDM4W6l5V2Nj3tfRQ1ZYCuOVbk9yAN5ThvJEGLs",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDMyotLu1em25jCt0Z3AEPRwWNTzs6geUS4JY9b",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDMhSpm0X6INxHO7wpgD4C6Fa5EJhPlbc23RIMz",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDMWScXYTZHNsEXgcIy3jbwTa8rnd5PVDpF9qBt",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDM4W6l5V2Nj3tfRQ1ZYCuOVbk9yAN5ThvJEGLs",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDMyotLu1em25jCt0Z3AEPRwWNTzs6geUS4JY9b",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDMhSpm0X6INxHO7wpgD4C6Fa5EJhPlbc23RIMz",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDMWScXYTZHNsEXgcIy3jbwTa8rnd5PVDpF9qBt",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDM4W6l5V2Nj3tfRQ1ZYCuOVbk9yAN5ThvJEGLs",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDMyotLu1em25jCt0Z3AEPRwWNTzs6geUS4JY9b",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDMhSpm0X6INxHO7wpgD4C6Fa5EJhPlbc23RIMz",
-  "https://43qnrtw1ps.ufs.sh/f/Gm1NBrCiKqDMWScXYTZHNsEXgcIy3jbwTa8rnd5PVDpF9qBt",
-]
-
-const mockImages = mockUrls.map((url, index) => ({
-  id: index + 1,
-  url
-}));
 export default async function HomePage() {
 
-  const posts = await db.query.posts.findMany();
+  const images = await db.query.images.findMany({
+    orderBy: (model, { desc }) => [desc(model.id)],
+  });
   return (
     <main className="">
       <div className="flex flex-wrap gap-4"> 
-        {posts.map((post) => (
-          <div key={post.id}>{post.name}</div>
-        ))}
-        {mockImages.map((pic) => (
-          <div key={pic.id} className= "w-48">
+        {[...images, ...images, ...images].map((pic, index) => (
+          <div key={pic.id + "" + index} className= "w-48 flex flex-col gap-2">
             <img src={pic.url} alt="image"/>
+            <div>{pic.name}</div>
           </div>
         ))}
       </div>
