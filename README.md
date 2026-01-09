@@ -5,8 +5,8 @@
 - [X] Deply 
 - [X] Scaffold basic UI
 - [X] Setup Database
-- [] Attach Database to UI
-- [] Authentication
+- [X] Attach Database to UI
+- [X] Authentication
 - [] Image Upload
 - [] Routing/image page
 - [] Delete button
