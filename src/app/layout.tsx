@@ -8,6 +8,8 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 
+import "@uploadthing/react/styles.css"; 
+
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { TopNav } from "./_components/topnav";
