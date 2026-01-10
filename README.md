@@ -7,7 +7,7 @@
 - [X] Setup Database
 - [X] Attach Database to UI
 - [X] Authentication
-- [] Image Upload
+- [X] Image Upload
 - [] Routing/image page
 - [] Delete button
 - [] Anlyitics

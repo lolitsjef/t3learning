@@ -18,7 +18,7 @@ export function TopNav() {
                     <UploadButton 
                       endpoint="imageUpload"
                       onClientUploadComplete={() => {
-                        router.refresh();  // This refreshes the page data
+                        router.refresh();  
                       }}
                     />
                     <UserButton/>
